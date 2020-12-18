@@ -5,7 +5,9 @@
 replicaCount: 1
 
 image:
+  repository: 2872/node-express-api
   tag: latest
+  pullPolicy: IfNotPresent
 
 imagePullSecrets: []
 nameOverride: ""
@@ -32,7 +34,7 @@ securityContext:
   # runAsUser: 1000
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 80
 
 ingress:
